@@ -1,0 +1,13 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: demo-server
+dubbo:
+  scan:
+    base-packages: com.tom
+  protocol:
+    name: dubbo
+    port: 12345
+  registry:
+    address: zookeeper://127.0.0.1:2181
