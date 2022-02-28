@@ -1,11 +1,13 @@
 server:
   port: 8070
 spring:
+  # 应用名称
   application:
     name: demo-client
 dubbo:
+  # 注册服务采用的协议和端口号
   protocol:
     name: dubbo
     port: 12345
   registry:
-    address: 'zookeeper://127.0.0.1:2181'
+    address: zookeeper://106.52.185.63:4422/ConfigCenterConfig?check=true&config-file=dubbo.properties&group=dubbo&highest-priority=false&timeout=10000
