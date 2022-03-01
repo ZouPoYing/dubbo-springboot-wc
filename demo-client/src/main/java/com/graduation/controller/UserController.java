@@ -168,9 +168,14 @@ public class UserController {
             return result;
         }
         User user = new User();
-        user.setUserId(Integer.valueOf(friend));
-        user.setUserPhone(friend);
-        User u = userService.queryUserByUserId(user);
+        User u = new User();
+        if (friend.length() > 10) {
+            user.setUserPhone(friend);
+            u = userService.queryUserByUserPhone(user);
+        } else {
+            user.setUserId(Integer.valueOf(friend));
+            u = userService.queryUserByUserId(user);
+        }
         if (u == null && userService.queryUserCountByUserPhone(user) == 0) {
             result.put("success", false);
             return result;
