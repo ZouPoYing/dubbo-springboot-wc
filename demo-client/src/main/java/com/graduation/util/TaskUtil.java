@@ -21,7 +21,7 @@ public class TaskUtil {
     public FileService fileService;
 
     //3.添加定时任务
-    @Scheduled(cron = "0/15 * * * * ?")
+//    @Scheduled(cron = "0/15 * * * * ?")
     //@Scheduled(cron = "0 0 0 1/1 * ? ") //每天凌晨0点0分0秒执行一次
     private void configureTasks() throws Exception {
         System.err.println("执行静态定时任务时间: " + LocalDateTime.now());

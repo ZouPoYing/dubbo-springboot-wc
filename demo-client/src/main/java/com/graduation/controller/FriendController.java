@@ -124,6 +124,20 @@ public class FriendController {
         return result;
     }
 
+    // 拒绝好友申请
+    @RequestMapping("/refuseByFriendId")
+    public Map<String, Object> refuseByFriendId(@RequestBody Map<String, String> params) throws Exception {
+        String friendId = params.get("friendId");
+        Map<String, Object> result = new HashMap<>();
+        if (MyUtil.isEmpty(friendId)) {
+            result.put("msg", "参数不能为空");
+            return result;
+        }
+        friendService.setStatusByFriendId(friendId, "拒绝");
+        result.put("success", true);
+        return result;
+    }
+
     // 获取好友列表
     @RequestMapping("/getFriend")
     public Map<String, Object> getFriend(@RequestBody Map<String, String> params) throws Exception {
