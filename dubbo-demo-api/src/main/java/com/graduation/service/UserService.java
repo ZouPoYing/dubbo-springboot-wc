@@ -19,4 +19,6 @@ public interface UserService {
     User queryUserByUserPhone(User user);
 
     void updateUserByUserIdAndSub(String userId, String sub);
+
+    String getUserHeadByUserId(String userId);
 }

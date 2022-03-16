@@ -48,4 +48,7 @@ public interface UserMapper {
     @Update("update user set ${sub} where user_id = #{userId} ")
     public void updateUserByUserIdAndSub(String userId, String sub);
 
+    @Select("select user_head as userHead from user where user_id=#{userId}")
+    public String getUserHeadByUserId(String userId);
+
 }

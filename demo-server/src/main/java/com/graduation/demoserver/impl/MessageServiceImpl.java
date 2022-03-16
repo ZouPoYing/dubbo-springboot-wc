@@ -23,6 +23,11 @@ public class MessageServiceImpl implements MessageService {
     }
 
     @Override
+    public List<Map<String, Object>> getGroupMessage(String userId, String friend) {
+        return messageMapper.getGroupMessage(userId,friend);
+    }
+
+    @Override
     public void insertMessage(Message message) {
         messageMapper.insertMessage(message);
     }

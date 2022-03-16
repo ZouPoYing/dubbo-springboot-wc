@@ -30,6 +30,8 @@ public class Message implements Serializable {
 
     private Date updateTime;
 
+    private Integer groupId;
+
     @Override
     public String toString() {
         return "Message{" +
@@ -41,7 +43,16 @@ public class Message implements Serializable {
                 ", value='" + value + '\'' +
                 ", createTime=" + createTime +
                 ", updateTime=" + updateTime +
+                ", groupId=" + groupId +
                 '}';
+    }
+
+    public Integer getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(Integer groupId) {
+        this.groupId = groupId;
     }
 
     public static long getSerialVersionUID() {

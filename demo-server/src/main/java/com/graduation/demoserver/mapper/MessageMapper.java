@@ -19,7 +19,17 @@ public interface MessageMapper {
             @Result(property = "updateTime", column = "update_time") })
     public List<Map<String, Object>> getMessage(String userId, String friend);
 
-    @Insert("insert into message(from_id,to_id,type,value) values(#{fromId},#{toId},#{type},#{value})")
+    @Select("select * from message where group_id = #{friend} order by create_time and status <> '删除'")
+    @Results({
+            @Result(property = "messageId", column = "message_id"),
+            @Result(property = "fromId", column = "from_id"),
+            @Result(property = "toId", column = "to_id"),
+            @Result(property = "groupId", column = "group_id"),
+            @Result(property = "createTime", column = "create_time"),
+            @Result(property = "updateTime", column = "update_time") })
+    public List<Map<String, Object>> getGroupMessage(String userId, String friend);
+
+    @Insert("insert into message(from_id,to_id,type,value,group_id) values(#{fromId},#{toId},#{type},#{value},#{groupId})")
     @Options(useGeneratedKeys=true, keyProperty="messageId", keyColumn="message_id")
     public void insertMessage(Message message);
 

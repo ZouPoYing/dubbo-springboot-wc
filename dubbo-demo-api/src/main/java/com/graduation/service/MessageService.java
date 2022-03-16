@@ -9,6 +9,8 @@ public interface MessageService {
 
     List<Map<String, Object>> getMessage(String userId, String friend);
 
+    List<Map<String, Object>> getGroupMessage(String userId, String friend);
+
     void insertMessage(Message message);
 
     List<Map<String, Object>> getChatRoom(String userId);

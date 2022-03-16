@@ -53,4 +53,9 @@ public class UserServiceImpl implements UserService {
     public void updateUserByUserIdAndSub(String userId, String sub) {
         userMapper.updateUserByUserIdAndSub(userId, sub);
     }
+
+    @Override
+    public String getUserHeadByUserId(String userId) {
+        return userMapper.getUserHeadByUserId(userId);
+    }
 }
