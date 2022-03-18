@@ -65,12 +65,15 @@ public class MessageController {
             if (userId.equals(message.get("fromId").toString())) {
                 message.put("mark", "from");
                 message.put("userHead", userService.getUserHeadByUserId(userId));
+                message.put("userName", userService.getUserNameByUserId(userId));
             } else if ("true".equals(isFriend)) {
                 message.put("mark", "to");
                 message.put("userHead", userService.getUserHeadByUserId(friend));
+                message.put("userName", userService.getUserNameByUserId(friend));
             } else {
                 message.put("mark", "to");
                 message.put("userHead", userService.getUserHeadByUserId(message.get("fromId").toString()));
+                message.put("userName", userService.getUserNameByUserId(message.get("fromId").toString()));
             }
             if ("friend".equals(message.get("type").toString()) ) {
                 friendCard.setUserId(Integer.valueOf(message.get("value").toString()));

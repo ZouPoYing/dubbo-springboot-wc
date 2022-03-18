@@ -51,4 +51,6 @@ public interface UserMapper {
     @Select("select user_head as userHead from user where user_id=#{userId}")
     public String getUserHeadByUserId(String userId);
 
+    @Select("select user_name as userHead from user where user_id=#{userId}")
+    public String getUserNameByUserId(String userId);
 }

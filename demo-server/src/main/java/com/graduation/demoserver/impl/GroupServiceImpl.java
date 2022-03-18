@@ -26,4 +26,14 @@ public class GroupServiceImpl implements GroupService {
     public List<Map<String, Object>> getGroupRoom(String userId) {
         return groupMapper.getGroupRoom(userId);
     }
+
+    @Override
+    public Map<String, Object> getGroupDetailByGroupId(String groupId) {
+        return groupMapper.getGroupDetailByGroupId(groupId);
+    }
+
+    @Override
+    public void updateGroupNameByGroupId(String groupName, String groupId) {
+        groupMapper.updateGroupNameByGroupId(groupName,groupId);
+    }
 }

@@ -21,4 +21,6 @@ public interface UserService {
     void updateUserByUserIdAndSub(String userId, String sub);
 
     String getUserHeadByUserId(String userId);
+
+    String getUserNameByUserId(String userId);
 }
